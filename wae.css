@@ -1,8 +1,21 @@
 /* hiding the body until components are loaded. */
 body {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
   opacity: 0;
+  padding: 2rem;  
   &.ready {
     opacity: 1;
     transition: 0.25s opacity;
   }
+}
+
+/* breadcrumb examples */
+.my-breadcrumb wa-breadcrumb-item::part(separator) {
+  color: #80808080;
+}
+wa-breadcrumb-item.self::part(label) {
+  cursor: default;
 }

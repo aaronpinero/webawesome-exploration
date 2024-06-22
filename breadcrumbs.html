@@ -4,16 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Breadcrumbs</title>
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/themes/default.css" />
     <link rel="stylesheet" href="wae.css" />
     <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/webawesome.loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <h1>Breadcrumb Component</h1>
+    <h2>Basic Example</h2>
+    <p>Basic breadcrumb with three linked items and one unlinked item representing the current node.</p>
     <wa-breadcrumb>
       <wa-breadcrumb-item href="home.html">Home</wa-breadcrumb-item>
       <wa-breadcrumb-item href="grandparent.html">Ancestor</wa-breadcrumb-item>
       <wa-breadcrumb-item href="parent.html">Parent</wa-breadcrumb-item>
       <wa-breadcrumb-item>Self</wa-breadcrumb-item>
+    </wa-breadcrumb>
+    <h2>Custom Separator Example</h2>
+    <p>Custom wa-icon separator with an inline style to change the separator color.</p>
+    <wa-breadcrumb>
+      <wa-icon slot="separator" name="angle-right" variant="solid" style="color: rgba(128,128,128,0.5);"></wa-icon>
+      <wa-breadcrumb-item href="home.html">Home</wa-breadcrumb-item>
+      <wa-breadcrumb-item href="grandparent.html">Ancestor</wa-breadcrumb-item>
+      <wa-breadcrumb-item href="parent.html">Parent</wa-breadcrumb-item>
+      <wa-breadcrumb-item>Self</wa-breadcrumb-item>
+    </wa-breadcrumb>
+    <h2>Custom Separator Example 2</h2>
+    <p>Custom separator. Used a CSS style rule to change the color of all the separators using the <code>::part</code> selector. Also using the <code>::part</code> selector to reset the cursor pointer for the unlinked "self" item.</p>
+    <wa-breadcrumb class="my-breadcrumb">
+      <div slot="separator">/</div>
+      <wa-breadcrumb-item href="home.html">Home</wa-breadcrumb-item>
+      <wa-breadcrumb-item href="grandparent.html">Ancestor</wa-breadcrumb-item>
+      <wa-breadcrumb-item href="parent.html">Parent</wa-breadcrumb-item>
+      <wa-breadcrumb-item class="self">Self</wa-breadcrumb-item>
     </wa-breadcrumb>
     <script type="module">
       await Promise.allSettled([
