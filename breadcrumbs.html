@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breadcrumbs</title>
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/themes/default.css" />
+    <link rel="stylesheet" href="wae.css" />
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/webawesome.loader.js"></script>
+  </head>
+  <body>
+    <wa-breadcrumb>
+      <wa-breadcrumb-item href="home.html">Home</wa-breadcrumb-item>
+      <wa-breadcrumb-item href="grandparent.html">Ancestor</wa-breadcrumb-item>
+      <wa-breadcrumb-item href="parent.html">Parent</wa-breadcrumb-item>
+      <wa-breadcrumb-item>Self</wa-breadcrumb-item>
+    </wa-breadcrumb>
+    <script type="module">
+      await Promise.allSettled([
+        customElements.whenDefined('wa-breadcrumb'),
+      ]);
+      document.body.classList.add('ready');
+    </script>
+  </body>
+</html>

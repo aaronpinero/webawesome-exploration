@@ -1,0 +1,8 @@
+/* hiding the body until components are loaded. */
+body {
+  opacity: 0;
+  &.ready {
+    opacity: 1;
+    transition: 0.25s opacity;
+  }
+}
