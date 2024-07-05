@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animated Image</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/themes/default.css" />
+    <link rel="stylesheet" href="wae.css" />
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/webawesome.loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Animated Image Component</h1>
+    <h2>Basic Example</h2>
+    <wa-animated-image src="bees.gif" alt="Animation of bees flying around in a wave pattern"></wa-animated-image>
+    <script type="module">
+      await Promise.allSettled([
+        customElements.whenDefined('wa-animated-image'),
+      ]);
+      document.body.classList.add('ready');
+    </script>
+  </body>
+</html>
