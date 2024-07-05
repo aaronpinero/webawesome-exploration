@@ -15,12 +15,39 @@
   <body>
     <h1>Animated Image Component</h1>
     <h2>Basic Example</h2>
-    <wa-animated-image src="bees.gif" alt="Animation of bees flying around in a wave pattern"></wa-animated-image>
+    <p>For the default component, the play icon is not optically centered. This can be corrected.</p>
+    <wa-animated-image src="https://media.giphy.com/media/11H4WsvBFJxw8E/giphy.gif?cid=790b76119nydvd5b9947efiju1cw68syeoe4p8b2lr6m98q4&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Animation of bees flying around in a wave pattern"></wa-animated-image>
+    <h2>Optically Centered Play Icon</h2>
+    <p>This is not the ideal way to optically center this icon, but it is one way to do it.</p>
+    <wa-animated-image src="https://media.giphy.com/media/11H4WsvBFJxw8E/giphy.gif?cid=790b76119nydvd5b9947efiju1cw68syeoe4p8b2lr6m98q4&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Animation of bees flying around in a wave pattern">
+      <wa-icon slot="play-icon" style="margin-left:3px; color: greenyellow;" name="play"></wa-icon>
+    </wa-animated-image>
+    <h2>Customized Play/Pause Button</h2>
+    <p>Changing the style of the button</p>
+    <wa-animated-image class="red" src="https://media.giphy.com/media/11H4WsvBFJxw8E/giphy.gif?cid=790b76119nydvd5b9947efiju1cw68syeoe4p8b2lr6m98q4&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Animation of bees flying around in a wave pattern">
+      <wa-icon slot="play-icon" style="margin-left:3px" name="play"></wa-icon>
+    </wa-animated-image>
+    <p><wa-button id="playall" appearance="tinted" variant="brand">Play All</wa-button></p>
     <script type="module">
       await Promise.allSettled([
         customElements.whenDefined('wa-animated-image'),
+        customElements.whenDefined('wa-button'),
       ]);
       document.body.classList.add('ready');
+      var playallbtn = document.getElementById('playall');
+      playallbtn.addEventListener('click', function(){
+        var imgs = document.querySelectorAll('wa-animated-image');
+        imgs.forEach(function(item, index, listObj){
+          if (item.hasAttribute('play')) {
+            item.removeAttribute('play');
+            playallbtn.innerText = "Play All";
+          }
+          else {
+            item.setAttribute('play', 'play');
+            playallbtn.innerText = "Pause All";
+          }
+        });
+      });
     </script>
   </body>
 </html>

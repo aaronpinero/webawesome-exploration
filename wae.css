@@ -12,6 +12,12 @@ body {
   }
 }
 
+/* animated image examples */
+wa-animated-image.red::part(control-box) {
+  background-color: red;
+  border: none;
+}
+
 /* breadcrumb examples */
 .my-breadcrumb wa-breadcrumb-item::part(separator) {
   color: #80808080;
