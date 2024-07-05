@@ -1,6 +1,7 @@
 /* hiding the body until components are loaded. */
 body {
   font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.5;
   margin-left: auto;
   margin-right: auto;
   max-width: 60ch;
@@ -11,7 +12,15 @@ body {
     transition: 0.25s opacity;
   }
 }
+
+/* wide body*/
+body.wide {
+  max-width: 120ch;
+}
+
+/* basic heading styles */
 h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
   margin-block-end: 1rem;
   margin-block-start: 1rem;
 }
@@ -20,9 +29,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* index page */
-body.index {
-  max-width: 120ch;
-}
 .card-grid {
   display: grid;
   gap: 2rem;
@@ -37,6 +43,69 @@ wa-animated-image.red::part(control-box) {
   left: auto;
   right: 1rem;
   top: auto;
+}
+
+/* avatar examples */
+.org-chart {
+  wa-card {
+    --border-color: var(--wa-color-neutral-border-loud);
+    --border-width: 2px;
+  }
+}
+.org-card {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  line-height: 1.2;
+}
+#org-level1 {
+  display: block;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  width: 280px;
+  wa-avatar {
+    --background-color: var(--wa-color-brand-fill-normal);
+    --content-color: var(--wa-color-brand-on-normal);
+  }
+  &::after {
+    background-color: var(--wa-color-neutral-border-normal);
+    content: "";
+    display: block;
+    height: 30px;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    width:2px;
+  }
+}
+#org-level2 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 270px 270px;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  width: 560px;
+  &::before {
+    background-color: var(--wa-color-neutral-border-normal);
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    margin-left: -145px;
+    position: absolute;
+    width:290px;
+  }
+  wa-card::before {
+    background-color: var(--wa-color-neutral-border-normal);
+    content: "";
+    display: block;
+    height: 30px;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    width:2px;
+  }
+  wa-avatar {
+    --size: 36px;
   }
 }
 

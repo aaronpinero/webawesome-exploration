@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avatar</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/themes/default.css" />
+    <link rel="stylesheet" href="wae.css" />
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.2/dist/webawesome.loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body class="org-chart">
+    <h1>Avatar Example</h1>
+    <p>Note: it doesn't appear possible to apply a display:flex or display:grid style rule directly onto the wa-card element so that the contexts of the card are displayed as indicated. It's necessary to create a container element inside the card with the desired display style</p>
+    <p>This example shows customization of the color, icons, shape, and sizing of the avatar component.</p>
+    <wa-card id="org-level1">
+      <div class="org-card">
+        <wa-avatar label="User avatar">
+          <wa-icon slot="icon" name="user-tie" variant="solid"></wa-icon>
+        </wa-avatar>
+        <div class="org-person">
+          <div class="org-person-name"><strong>Steven Porder</strong></div>
+          <div class="org-person-title">Executive director</div>
+        </div>
+      </div>
+    </wa-card>
+    <div id="org-level2">
+      <wa-card>
+        <div class="org-card">
+          <wa-avatar label="User avatar" shape="rounded"></wa-avatar>
+          <div class="org-person">
+            <div class="org-person-name"><strong>Karen Wild</strong></div>
+            <div class="org-person-title">Director of Operations</div>
+          </div>
+        </div>
+      </wa-card>
+      <wa-card>
+        <div class="org-card">
+          <wa-avatar label="User avatar" shape="rounded">
+            <wa-icon slot="icon" name="face-smile" variant="regular"></wa-icon>
+          </wa-avatar>
+          <div class="org-person">
+            <div class="org-person-name"><strong>Lin Archer-Wai</strong></div>
+            <div class="org-person-title">Director of Services</div>
+          </div>
+        </div>
+      </wa-card>
+    </div>
+    <script type="module">
+      await Promise.allSettled([
+        customElements.whenDefined('wa-avatar'),
+        customElements.whenDefined('wa-card'),
+        customElements.whenDefined('wa-icon'),
+      ]);
+      document.body.classList.add('ready');
+    </script>
+  </body>
+</html>
