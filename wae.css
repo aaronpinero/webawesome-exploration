@@ -11,11 +11,33 @@ body {
     transition: 0.25s opacity;
   }
 }
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 1rem;
+  margin-block-start: 1rem;
+}
+:not(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: 2rem;
+}
+
+/* index page */
+body.index {
+  max-width: 120ch;
+}
+.card-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+}
 
 /* animated image examples */
 wa-animated-image.red::part(control-box) {
   background-color: red;
   border: none;
+  bottom: 1rem;
+  left: auto;
+  right: 1rem;
+  top: auto;
+  }
 }
 
 /* breadcrumb examples */
